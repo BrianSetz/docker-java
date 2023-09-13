@@ -73,6 +73,16 @@ public class UnixSocket extends AbstractSocket {
     }
 
     @Override
+    public void shutdownInput() throws IOException {
+        this.socketChannel.shutdownInput();
+    }
+
+    @Override
+    public void shutdownOutput() throws IOException {
+        this.socketChannel.shutdownOutput();
+    }
+
+    @Override
     public SocketAddress getLocalSocketAddress() {
         return socketAddress;
     }
